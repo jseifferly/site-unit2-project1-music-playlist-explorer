@@ -4,3 +4,33 @@ body {
     padding: 0;
     background-color: #f8f8f8;
 }
+
+header {
+    background-color: lightgray;
+    color: rgb(83, 83, 83);
+    padding: 5px 100px 5px 50px;
+    border-bottom: solid gray 1px;
+}
+
+footer {
+    background-color: lightgray;
+    color: rgb(83, 83, 83);
+    padding: 20px 100px 5px 50px;
+    border-top: solid gray 1px;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+}
+
+.playlist-cards {
+    display: grid;
+}
+
+.playlist {
+    border: rgb(83, 83, 83) 1px solid;
+    margin: 10px 50px;
+    width: 300px;
+    padding: 0px 5px;
+}
