@@ -42,7 +42,7 @@ p {
     font-size: 10px;
 }
 
-.playlist-cards {
+#playlist-cards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -87,7 +87,7 @@ p {
 
 
 #modal {
-    display: block;
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
@@ -102,12 +102,15 @@ p {
 .modal-content {
    background-color: #fefefe;
    color: black;
-   margin: 200px auto;
-   padding: 20px;
-   border: 1px solid #888;
-   border-radius: 10px;
-   width: 40%;
-   height: 70%;
+   margin: auto; /* 15% from the top and centered */
+   border: 0px solid #888;
+   width: 35%; /* Could be more or less, depending on screen size */
+   border: white 3px solid;
+   border-radius: 8px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
 }
 
 .close {
@@ -123,11 +126,15 @@ p {
     cursor: pointer;
 }
 
+#song-list {
+    overflow: auto;
+}
+
 .song-tile {
     display: flex;
-    border: 3px solid gray;
+    background-color: #e5e5e5;
+    border: 3px solid white;
     border-radius: 7px;
-    margin: 10px 50px;
     padding: 5px;
     height: 10%;
 }
@@ -159,13 +166,13 @@ p {
 }
 
 .song-duration {
-    padding: 5px;
-    margin-left: 670px;
+    position: absolute;
+    right: 5%;
 }
 
 #modal-header{
     display: flex;
-    margin: 10px 50px;
+    margin-bottom: 20px;
 }
 
 #modal-playlist-cover {
