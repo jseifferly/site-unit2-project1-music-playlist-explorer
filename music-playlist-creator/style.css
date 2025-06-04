@@ -2,30 +2,26 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: rgb(30, 30, 30);
     color: #fefefe;
 }
 
 header {
-    background-color: rgb(48, 124, 248);
+    background: linear-gradient(rgb(205 218 255),rgb(18, 104, 244));
     color: rgb(0, 0, 0);
     padding: 2px 50px 2px 50px;
-    border-bottom: solid rgb(70, 70, 70) 2px;
+    border-bottom: solid rgb(54, 28, 182) 2px;
     margin-bottom: 20px;
     text-align: center;
 }
 
 footer {
     background-color: rgb(48, 124, 248);
+    background: linear-gradient(rgb(18, 104, 244), rgb(30, 71, 185));
     color: rgb(83, 83, 83);
     margin-top: 20px;
-    padding: 20px 100px 5px 50px;
-    border-top:  solid rgb(70, 70, 70) 2px;
-}
-
-img {
-    width: 175px;
-    height: 175px;
+    padding: 15px 100px 5px 50px;
+    border-top:  solid rgb(54, 28, 182) 2px;
 }
 
 h1 {
@@ -55,38 +51,50 @@ p {
 
 .playlist {
     border: rgb(83, 83, 83) 1px solid;
+    width: 195px;
     border-radius: 7px;
-    margin: 7px 35px;
-    padding: 3px 5px;
+    margin: 12px 20px;
+    padding: 3px 10px;
     box-shadow: 5px 5px 7px rgb(70, 70, 70);
-    transition: transform .4s;
+    transition: transform .6s;
 }
 
 .playlist:hover {
-    transform: scale(1.1);
+    transform: scale(0.95);
     box-shadow: 2px 2px 10px rgb(70, 70, 70);
 }
 
+.playlist-cover {
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 12px;
+    width: 85%;
+}
+
+.playlist-title {
+    margin: 0px;
+}
+
+.playlist-creator-name {
+    margin: 0px;
+}
+
 .like-count{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
+    font-size: 12px;
+    margin: 0px;
+    margin-bottom: 6px;
 }
 
-.like-icon{
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
 
-.modal {
-    display: none;
+#modal {
+    display: block;
     position: fixed;
-    z-index: 1;
     left: 0;
     top: 0;
-    width: 50%;
-    height: 50%;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    margin: auto;
     overflow: auto;
     background-color: rgb(0,0,0,0.4);
 }
@@ -94,11 +102,12 @@ p {
 .modal-content {
    background-color: #fefefe;
    color: black;
-   margin: 15% auto;
+   margin: 200px auto;
    padding: 20px;
    border: 1px solid #888;
    border-radius: 10px;
-   width: 80%;
+   width: 40%;
+   height: 70%;
 }
 
 .close {
@@ -120,6 +129,7 @@ p {
     border-radius: 7px;
     margin: 10px 50px;
     padding: 5px;
+    height: 10%;
 }
 
 .playlist-info {
@@ -156,4 +166,9 @@ p {
 #modal-header{
     display: flex;
     margin: 10px 50px;
+}
+
+#modal-playlist-cover {
+    display: block;
+    width: 25%;
 }
