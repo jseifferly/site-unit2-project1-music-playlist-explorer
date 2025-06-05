@@ -46,11 +46,11 @@ function noPlaylistsMessage() {
 loadPlaylistData();
 const playlists = Array.from(document.querySelectorAll(".playlist"));
 
-//-------------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------------------------//
 
 
 
-//**--------------------------MODAL FUNCTIONALLITY AND DYNAMICALLY POPULATE MODAL--------------------------**//
+//**---------------------MODAL FUNCTIONALLITY AND DYNAMICALLY POPULATE MODAL---------------------**//
 
 function openModal(playlist) {
     populateModal(playlist);
@@ -115,7 +115,7 @@ function populateModal(playlist){
 
 }
 
-//-------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------//
 
 //**--------------------------CREATE EACH OF THE MODAL ELEMENTS TO ADD--------------------------**//
 
@@ -131,10 +131,6 @@ function createModalHeaderElement(playlist){
                     </div>
     `
     return div;
-}
-
-function updateSongList(songs) {
-
 }
 
 function createModalSongList(songs){
@@ -162,10 +158,10 @@ function createModalSongTile(song){
     return div;
 }
 
-//-------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------//
 
 
-//**--------------------------LIKE BUTTON FUNCTIONALITY--------------------------**//
+//**---------------------------------LIKE BUTTON FUNCTIONALITY---------------------------------**//
 
 //add event listners
 const likeIcons = playlists.map((currentValue) => { return currentValue.querySelector('.like-icon') })
@@ -198,10 +194,10 @@ function updateLikeCount(likeCountIndex, count) {
     likeCounts[likeCountIndex].textContent = `${count}`
 }
 
-//-------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------//
 
 
-//**--------------------------SHUFFLE SONGS FEATURE--------------------------**/
+//**------------------------------------SHUFFLE SONGS FEATURE------------------------------------**/
 
 function shuffleArray(arr){
     for(i = arr.length - 1; i > 0; i--){
@@ -213,4 +209,4 @@ function shuffleArray(arr){
     return arr
 }
 
-//-------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------------------//

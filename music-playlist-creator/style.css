@@ -7,6 +7,7 @@ body {
 }
 
 header {
+    display: flex;
     background: linear-gradient(rgb(205 218 255),rgb(18, 104, 244));
     color: rgb(0, 0, 0);
     padding: 2px 50px 2px 50px;
@@ -44,6 +45,47 @@ h4 {
 
 p {
     font-size: 10px;
+}
+
+.title {
+    font-size: 35px;
+}
+
+.featured {
+    color: rgb(50, 50, 50);
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    position: fixed;
+    right: 5%;
+    top: 3%;
+    text-decoration: none;
+}   
+
+#featured-content {
+    display: flex;
+    position: absolute;
+    top: 25%;
+}
+
+.featured-playlist-info {
+    text-align: center;
+    width: 50%;
+    margin: 0;
+}
+
+.featured-song-list {    
+    height: 80%;
+    width: 40%;
+}
+
+.featured-cover {
+    display: block;
+    margin: auto;
+    width: 85%;
+}
+
+.featured-song-art {
+    margin-right: 10px;
 }
 
 #playlist-cards {
@@ -113,6 +155,7 @@ p {
 }
 
 .like-number {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     margin: 7px;
 }
@@ -160,12 +203,13 @@ p {
 .song-list {
     overflow-y: auto;
     height: 400px;
+    color: white;
 }
 
 .song-tile {
     display: flex;
-    background-color: #e5e5e5;
-    border: 3px solid white;
+    background-color: #292929;
+    border: 3px solid rgb(25, 25, 25);
     border-radius: 7px;
     padding: 5px;
     height: 100px;
