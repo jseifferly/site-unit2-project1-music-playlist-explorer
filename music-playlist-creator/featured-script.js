@@ -10,7 +10,7 @@ function loadFeaturedPage(playlist){
 }
 
 function selectRandomPlaylist() {
-    var randomPlaylistIndex = Math.floor(Math.random() % playlistData.length)
+    var randomPlaylistIndex = Math.floor(Math.random() * playlistData.length)
     return playlistData[randomPlaylistIndex];
 }
 
@@ -56,4 +56,5 @@ function createSongElement(song) {
 }
 
 const featuredPlaylist = selectRandomPlaylist();
+console.log(featuredPlaylist);
 loadFeaturedPage(featuredPlaylist);
