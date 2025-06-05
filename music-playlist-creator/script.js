@@ -1,7 +1,7 @@
 const modal = document.getElementById("modal");
 
 
-    //**DYNAMICALLY LOAD PLAYLIST DATA**//
+//**--------------------------DYNAMICALLY LOAD PLAYLIST DATA--------------------------**//
 
 function loadPlaylistData(){
     const playlistGrid = document.getElementById("playlist-cards")
@@ -17,6 +17,7 @@ function loadPlaylistData(){
     })
 }
 
+//Create a playlist element to add
 function createPlaylistElement(playlist){
     const div = document.createElement('article');
     div.className = 'playlist';
@@ -24,11 +25,15 @@ function createPlaylistElement(playlist){
         <img class="playlist-cover" src=${playlist.playlist_art} alt="">
         <h3 class="playlist-title">${playlist.playlist_name}</h3>
         <h4 class="playlist-creator-name">${playlist.playlist_author}</h4>
-        <p class="like-count">&#129505;${playlist.like_count}</p>
+        <div class="like-count">
+        <p class="like-icon">&#129505;</p>
+        <p class="like-number">${playlist.like_count}</p>
+        </div>
     `;
     return div;
 }
 
+//Create a no playlist message
 function noPlaylistsMessage() {
     const div = document.createElement('div');
     div.className = 'no-playlists';
@@ -36,18 +41,22 @@ function noPlaylistsMessage() {
     return div
 }
 
+//Load the playlist data
 loadPlaylistData();
 const playlists = Array.from(document.querySelectorAll(".playlist"));
-console.log(playlists)
+
+//-------------------------------------------------------------------------------//
 
 
-    //**MODAL FUNCTIONALLITY AND DYNAMICALLY POPULATE MODAL**//
+
+//**--------------------------MODAL FUNCTIONALLITY AND DYNAMICALLY POPULATE MODAL--------------------------**//
 
 function openModal(playlist) {
     populateModal(playlist);
     modal.style.display = "block";
 }
 
+//Create event listners for each playlist and display modal on click
 for(i = 0; i < playlists.length; i++){
     playlists[i].addEventListener("click", (event) => {
 
@@ -55,7 +64,9 @@ for(i = 0; i < playlists.length; i++){
 
         if(event.target.className == 'playlist'){
             clickedIndex = playlists.indexOf(event.target)
-        }else{
+        }else if(event.target.className == 'like-icon' || event.target.className == 'like-number'){
+            return;
+        }else {
             clickedIndex = playlists.indexOf(event.target.parentNode)
         }
 
@@ -69,6 +80,7 @@ window.onclick = function(event) {
    }
 }
 
+//Add playlist specifc data to our modal
 function populateModal(playlist){
     const modal_content = document.getElementById('modal-content');
     modal_content.innerHTML = ``
@@ -89,6 +101,9 @@ function populateModal(playlist){
 
 }
 
+//-------------------------------------------------------------------------------//
+
+//**--------------------------CREATE EACH OF THE MODAL ELEMENTS TO ADD--------------------------**//
 
 function createModalHeaderElement(playlist){
     const div = document.createElement('div');
@@ -126,3 +141,5 @@ function createModalSongTile(song){
         <h5 class="song-duration">${Math.floor(song.song_duration / 60)}:${String(song.song_duration % 60).padStart(2,'0')}</h5>`
     return div;
 }
+
+//-------------------------------------------------------------------------------//

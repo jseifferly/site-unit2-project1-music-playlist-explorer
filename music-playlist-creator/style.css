@@ -94,11 +94,27 @@ p {
 }
 
 .like-count{
+    display: flex;
     font-size: 12px;
     margin: 0px;
     margin-bottom: 6px;
 }
 
+.like-icon {
+    font-size: 20px;
+    margin: 0;
+    transition: transform .4s;
+}
+
+.like-icon:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.like-number {
+    font-size: 15px;
+    margin: 7px;
+}
 
 #modal {
     display: none;
