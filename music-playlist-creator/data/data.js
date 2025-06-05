@@ -5,6 +5,7 @@ const playlistData = [
         "playlist_author": "Jackson",
         "playlist_art": "assets/img/playlist.png",
         "like_count": 5,
+        "liked": false,        
         "songs": [
             {
                 "song_title": "Homecoming",
@@ -56,6 +57,7 @@ const playlistData = [
         "playlist_author": "Maya",
         "playlist_art": "assets/img/playlist.png",
         "like_count": 12,
+        "liked": false,
         "songs": [
             {
                 "song_title": "Sunset Lover",
@@ -107,6 +109,7 @@ const playlistData = [
         "playlist_author": "Alex",
         "playlist_art": "assets/img/playlist.png",
         "like_count": 8,
+        "liked": false,        
         "songs": [
             {
                 "song_title": "Stronger",
@@ -158,6 +161,7 @@ const playlistData = [
         "playlist_author": "Nina",
         "playlist_art": "assets/img/playlist.png",
         "like_count": 9,
+        "liked": false,        
         "songs": [
             {
                 "song_title": "Life is a Highway",
@@ -209,6 +213,7 @@ const playlistData = [
         "playlist_author": "Liam",
         "playlist_art": "assets/img/playlist.png",
         "like_count": 15,
+        "liked": false,
         "songs": [
             {
                 "song_title": "Smells Like Teen Spirit",
@@ -260,6 +265,7 @@ const playlistData = [
         "playlist_author": "Emma",
         "playlist_art": "assets/img/playlist.png",
         "like_count": 7,
+        "liked": false,        
         "songs": [
             {
                 "song_title": "Weightless",
@@ -312,6 +318,7 @@ const playlistData = [
         "playlist_author": "Zara",
         "playlist_art": "assets/img/playlist.png",
         "like_count": 20,
+        "liked": false,
         "songs": [
             {
                 "song_title": "Uptown Funk",
@@ -363,6 +370,7 @@ const playlistData = [
         "playlist_author": "Eli",
         "playlist_art": "assets/img/playlist.png",
         "like_count": 11,
+        "liked": false,
         "songs": [
             {
                 "song_title": "Dog Days Are Over",
