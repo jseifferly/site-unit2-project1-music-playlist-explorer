@@ -30,6 +30,9 @@ function createPlaylistElement(playlist){
         <p class="like-icon">&#128420;</p>
         <p class="like-number">${playlist.like_count}</p>
         </div>
+        <div class='playlist-actions'>
+        <span class='delete-playlist'>&#9940</span>
+        </div>
     `;
     return div;
 }
@@ -77,7 +80,7 @@ for(i = 0; i < playlists.length; i++){
 
         if(event.target.className == 'playlist'){
             clickedIndex = playlists.indexOf(event.target)
-        }else if(event.target.className == 'like-icon' || event.target.className == 'like-number'){
+        }else if(event.target.className == 'like-icon' || event.target.className == 'like-number' || event.target.className == 'delete-playlist'){
             return;
         }else {
             clickedIndex = playlists.indexOf(event.target.parentNode)
@@ -208,5 +211,21 @@ function shuffleArray(arr){
     }
     return arr
 }
+
+//------------------------------------------------------------------------------------------------//
+
+
+//**------------------------------------DELETE FUNCTIONALITY------------------------------------**//
+
+//add event listenrs
+const deleteIcons = playlists.map((currentValue) => {return currentValue.querySelector('.delete-playlist')})
+
+deleteIcons.forEach ( icon => {
+    icon.addEventListener('click', (event) => {
+        const clickedIndex = deleteIcons.indexOf(icon);
+        playlists[clickedIndex].remove();
+
+    })
+})
 
 //------------------------------------------------------------------------------------------------//
