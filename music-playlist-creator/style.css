@@ -184,7 +184,7 @@ p {
     float: right;
 }
 
-#modal-header{
+.modal-header{
     display: flex;
     margin-bottom: 20px;
 }

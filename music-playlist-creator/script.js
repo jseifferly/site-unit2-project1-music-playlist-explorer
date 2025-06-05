@@ -1,5 +1,4 @@
 const modal = document.getElementById("modal");
-const close_button = document.getElementsByClassName("close")[0];
 
 
     //**DYNAMICALLY LOAD PLAYLIST DATA**//
@@ -25,7 +24,7 @@ function createPlaylistElement(playlist){
         <img class="playlist-cover" src=${playlist.playlist_art} alt="">
         <h3 class="playlist-title">${playlist.playlist_name}</h3>
         <h4 class="playlist-creator-name">${playlist.playlist_author}</h4>
-        <p class="like-count">&#129505;${playlist.like_count}</p>  
+        <p class="like-count">&#129505;${playlist.like_count}</p>
     `;
     return div;
 }
@@ -38,21 +37,29 @@ function noPlaylistsMessage() {
 }
 
 loadPlaylistData();
-const playlists = document.querySelectorAll(".playlist");
-let playlistDisplay = null;
+const playlists = Array.from(document.querySelectorAll(".playlist"));
+console.log(playlists)
 
 
     //**MODAL FUNCTIONALLITY AND DYNAMICALLY POPULATE MODAL**//
 
 function openModal(playlist) {
-
     populateModal(playlist);
     modal.style.display = "block";
 }
 
 for(i = 0; i < playlists.length; i++){
-    playlists[i].addEventListener("click", () => {
-        openModal(playlistData[0])
+    playlists[i].addEventListener("click", (event) => {
+
+        let clickedIndex = -1;
+
+        if(event.target.className == 'playlist'){
+            clickedIndex = playlists.indexOf(event.target)
+        }else{
+            clickedIndex = playlists.indexOf(event.target.parentNode)
+        }
+
+        openModal(playlistData[clickedIndex])
     })
 }
 
@@ -66,6 +73,14 @@ function populateModal(playlist){
     const modal_content = document.getElementById('modal-content');
     modal_content.innerHTML = ``
 
+    const span = document.createElement('span');
+    span.className = 'close';
+    span.innerHTML = '&times;';
+    span.addEventListener("click", () => {
+        modal.style.display = "none"
+    })
+    modal_content.appendChild(span);
+
     const header = createModalHeaderElement(playlist);
     modal_content.appendChild(header);
 
@@ -74,9 +89,6 @@ function populateModal(playlist){
 
 }
 
-close_button.addEventListener("click", () => {
-    modal.style.display = "none"
-})
 
 function createModalHeaderElement(playlist){
     const div = document.createElement('div');
@@ -111,6 +123,6 @@ function createModalSongTile(song){
             <h6 class="artist-name">${song.song_author}</h6>
             <h6 class="albumn-name">${song.albumn_name}</h6>
         </div>
-        <h5 class="song-duration">${Math.floor(song.song_duration / 60)} : ${song.song_duration % 60}</h5>`
+        <h5 class="song-duration">${Math.floor(song.song_duration / 60)}:${String(song.song_duration % 60).padStart(2,'0')}</h5>`
     return div;
 }
