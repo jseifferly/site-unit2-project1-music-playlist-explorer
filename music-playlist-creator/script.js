@@ -16,6 +16,13 @@ function loadPlaylistData(){
         const element = createPlaylistElement(playlist);
         playlistGrid.appendChild(element);
     })
+
+    const addPlaylistElement = document.createElement('div');
+    addPlaylistElement.className = 'add-playlist'
+    addPlaylistElement.textContent = '+'
+    playlistGrid.appendChild(addPlaylistElement);
+
+
 }
 
 //Create a playlist element to add
@@ -31,7 +38,8 @@ function createPlaylistElement(playlist){
         <p class="like-number">${playlist.like_count}</p>
         </div>
         <div class='playlist-actions'>
-        <span class='delete-playlist'>&#9940</span>
+        <span class='delete-playlist'>&#9940;</span>
+        <span class='edit-playlist'>&#128221;</span>
         </div>
     `;
     return div;
