@@ -45,7 +45,8 @@ let playlistDisplay = null;
     //**MODAL FUNCTIONALLITY AND DYNAMICALLY POPULATE MODAL**//
 
 function openModal(playlist) {
-    modal.style.display = "block"
+    populateModal(playlist);
+    modal.style.display = "block";
 }
 
 close_button.addEventListener("click", () => {
@@ -64,4 +65,8 @@ window.onclick = function(event) {
    if (event.target == modal) {
       modal.style.display = "none";
    }
+}
+
+function populateModal(playlist){
+
 }
