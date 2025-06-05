@@ -45,19 +45,15 @@ let playlistDisplay = null;
     //**MODAL FUNCTIONALLITY AND DYNAMICALLY POPULATE MODAL**//
 
 function openModal(playlist) {
+
     populateModal(playlist);
     modal.style.display = "block";
 }
 
-close_button.addEventListener("click", () => {
-    modal.style.display = "none"
-})
-
 for(i = 0; i < playlists.length; i++){
     playlists[i].addEventListener("click", () => {
-        playlistDisplay = playlists[i]
-        console.log(playlistDisplay)
-        openModal()
+        console.log(playlistData[0])
+        openModal(playlistData[0])
     })
 }
 
@@ -68,5 +64,59 @@ window.onclick = function(event) {
 }
 
 function populateModal(playlist){
+    const modal_content = document.getElementById('modal-content');
 
+    const closeElement = document.createElement('span');
+    closeElement.className = 'close';
+    closeElement.textContent = '&times;'
+    modal_content.appendChild(closeElement);
+
+    const header = createModalHeaderElement(playlist);
+    modal_content.appendChild(header);
+
+    const song_list = createModalSongList(playlist.songs);
+    modal_content.appendChild(song_list);
+
+}
+
+close_button.addEventListener("click", () => {
+    modal.style.display = "none"
+})
+
+function createModalHeaderElement(playlist){
+    const div = document.createElement('div');
+    div.className = 'modal-header';
+    div.innerHTML = `<img id="modal-playlist-cover" src=${playlist.playlist_art} alt="">
+                    <div class="playlist-info">
+                    <h2 id="modal-title">${playlist.playlist_name}</h2>
+                    <h3 id="modal-creator">${playlist.playlist_author}</h3>
+                    </div>
+    `
+    return div;
+}
+
+function createModalSongList(songs){
+    const div = document.createElement('div');
+    div.className = 'song-list';
+    console.log(songs);
+    for (i = 0; i < songs.length; i++) {
+        const songElement = createModalSongTile(songs[i]);
+        div.appendChild(songElement);
+    }
+
+    return div;
+}
+
+function createModalSongTile(song){
+    const div = document.createElement('article');
+    div.className = 'song-tile';
+    div.innerHTML = `
+        <img class="song-cover" src=${song.song_art} alt="">
+        <div class="song-info">
+            <h5 class="song-title">${song.song_title}</h5>
+            <h6 class="artist-name">${song.song_author}</h6>
+            <h6 class="albumn-name">${song.albumn_name}</h6>
+        </div>
+        <h5 class="song-duration">${Math.floor(song.song_duration / 60)} : ${song.song_duration % 60}</h5>`
+    return div;
 }

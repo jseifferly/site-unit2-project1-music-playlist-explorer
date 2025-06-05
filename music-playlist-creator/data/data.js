@@ -7,46 +7,46 @@ const playlistData = [
         "like_count": 5,
         "songs": [
             {
-                "song-title": "Homecoming",
-                "song-author": "Kanye West",
-                "albumn-name": "Graduation",
-                "song-duration": 203,
-                "song-art": "assests/img/song.png"
+                "song_title": "Homecoming",
+                "song_author": "Kanye West",
+                "albumn_name": "Graduation",
+                "song_duration": 203,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Hey Ya!",
-                "song-author": "OutKast",
-                "albumn-name": "Speakerboxxx/The Love Below",
-                "song-duration": 235,
-                "song-art": "assests/img/song.png"
+                "song_title": "Hey Ya!",
+                "song_author": "OutKast",
+                "albumn_name": "Speakerboxxx/The Love Below",
+                "song_duration": 235,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Lose Yourself",
-                "song-author": "Eminem",
-                "albumn-name": "8 Mile",
-                "song-duration": 326,
-                "song-art": "assests/img/song.png"
+                "song_title": "Lose Yourself",
+                "song_author": "Eminem",
+                "albumn_name": "8 Mile",
+                "song_duration": 326,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Rolling in the Deep",
-                "song-author": "Adele",
-                "albumn-name": "21",
-                "song-duration": 228,
-                "song-art": "assests/img/song.png"
+                "song_title": "Rolling in the Deep",
+                "song_author": "Adele",
+                "albumn_name": "21",
+                "song_duration": 228,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Blinding Lights",
-                "song-author": "The Weeknd",
-                "albumn-name": "After Hours",
-                "song-duration": 200,
-                "song-art": "assests/img/song.png"
+                "song_title": "Blinding Lights",
+                "song_author": "The Weeknd",
+                "albumn_name": "After Hours",
+                "song_duration": 200,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Shape of You",
-                "song-author": "Ed Sheeran",
-                "albumn-name": "÷ (Divide)",
-                "song-duration": 233,
-                "song-art": "assests/img/song.png"
+                "song_title": "Shape of You",
+                "song_author": "Ed Sheeran",
+                "albumn_name": "÷ (Divide)",
+                "song_duration": 233,
+                "song_art": "assests/img/song.png"
             }
         ]
     },
@@ -58,46 +58,46 @@ const playlistData = [
         "like_count": 12,
         "songs": [
             {
-                "song-title": "Sunset Lover",
-                "song-author": "Petit Biscuit",
-                "albumn-name": "Petit Biscuit EP",
-                "song-duration": 195,
-                "song-art": "assests/img/song.png"
+                "song_title": "Sunset Lover",
+                "song_author": "Petit Biscuit",
+                "albumn_name": "Petit Biscuit EP",
+                "song_duration": 195,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Lost in Japan",
-                "song-author": "Shawn Mendes",
-                "albumn-name": "Shawn Mendes",
-                "song-duration": 190,
-                "song-art": "assests/img/song.png"
+                "song_title": "Lost in Japan",
+                "song_author": "Shawn Mendes",
+                "albumn_name": "Shawn Mendes",
+                "song_duration": 190,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Electric Feel",
-                "song-author": "MGMT",
-                "albumn-name": "Oracular Spectacular",
-                "song-duration": 230,
-                "song-art": "assests/img/song.png"
+                "song_title": "Electric Feel",
+                "song_author": "MGMT",
+                "albumn_name": "Oracular Spectacular",
+                "song_duration": 230,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Put It All On Me",
-                "song-author": "Ed Sheeran",
-                "albumn-name": "÷ (Divide)",
-                "song-duration": 233,
-                "song-art": "assests/img/song.png"
+                "song_title": "Put It All On Me",
+                "song_author": "Ed Sheeran",
+                "albumn_name": "÷ (Divide)",
+                "song_duration": 233,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Come Away With Me",
-                "song-author": "Norah Jones",
-                "albumn-name": "Come Away With Me",
-                "song-duration": 195,
-                "song-art": "assests/img/song.png"
+                "song_title": "Come Away With Me",
+                "song_author": "Norah Jones",
+                "albumn_name": "Come Away With Me",
+                "song_duration": 195,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Coffee",
-                "song-author": "Miguel",
-                "albumn-name": "Wildheart",
-                "song-duration": 260,
-                "song-art": "assests/img/song.png"
+                "song_title": "Coffee",
+                "song_author": "Miguel",
+                "albumn_name": "Wildheart",
+                "song_duration": 260,
+                "song_art": "assests/img/song.png"
             }
         ]
     },
@@ -109,46 +109,46 @@ const playlistData = [
         "like_count": 8,
         "songs": [
             {
-                "song-title": "Stronger",
-                "song-author": "Kanye West",
-                "albumn-name": "Graduation",
-                "song-duration": 312,
-                "song-art": "assests/img/song.png"
+                "song_title": "Stronger",
+                "song_author": "Kanye West",
+                "albumn_name": "Graduation",
+                "song_duration": 312,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Can't Hold Us",
-                "song-author": "Macklemore & Ryan Lewis",
-                "albumn-name": "The Heist",
-                "song-duration": 270,
-                "song-art": "assests/img/song.png"
+                "song_title": "Can't Hold Us",
+                "song_author": "Macklemore & Ryan Lewis",
+                "albumn_name": "The Heist",
+                "song_duration": 270,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Titanium",
-                "song-author": "David Guetta ft. Sia",
-                "albumn-name": "Nothing but the Beat",
-                "song-duration": 245,
-                "song-art": "assests/img/song.png"
+                "song_title": "Titanium",
+                "song_author": "David Guetta ft. Sia",
+                "albumn_name": "Nothing but the Beat",
+                "song_duration": 245,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Remember the Name",
-                "song-author": "Fort Minor",
-                "albumn-name": "The Rising Tied",
-                "song-duration": 212,
-                "song-art": "assests/img/song.png"
+                "song_title": "Remember the Name",
+                "song_author": "Fort Minor",
+                "albumn_name": "The Rising Tied",
+                "song_duration": 212,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Till I Collapse",
-                "song-author": "Eminem",
-                "albumn-name": "The Eminem Show",
-                "song-duration": 297,
-                "song-art": "assests/img/song.png"
+                "song_title": "Till I Collapse",
+                "song_author": "Eminem",
+                "albumn_name": "The Eminem Show",
+                "song_duration": 297,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Power",
-                "song-author": "Kanye West",
-                "albumn-name": "My Beautiful Dark Twisted Fantasy",
-                "song-duration": 292,
-                "song-art": "assests/img/song.png"
+                "song_title": "Power",
+                "song_author": "Kanye West",
+                "albumn_name": "My Beautiful Dark Twisted Fantasy",
+                "song_duration": 292,
+                "song_art": "assests/img/song.png"
             }
         ]
     },
@@ -160,46 +160,46 @@ const playlistData = [
         "like_count": 9,
         "songs": [
             {
-                "song-title": "Life is a Highway",
-                "song-author": "Tom Cochrane",
-                "albumn-name": "Mad Mad World",
-                "song-duration": 264,
-                "song-art": "assests/img/song.png"
+                "song_title": "Life is a Highway",
+                "song_author": "Tom Cochrane",
+                "albumn_name": "Mad Mad World",
+                "song_duration": 264,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Shut Up and Drive",
-                "song-author": "Rihanna",
-                "albumn-name": "Good Girl Gone Bad",
-                "song-duration": 213,
-                "song-art": "assests/img/song.png"
+                "song_title": "Shut Up and Drive",
+                "song_author": "Rihanna",
+                "albumn_name": "Good Girl Gone Bad",
+                "song_duration": 213,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Send Me On My Way",
-                "song-author": "Rusted Root",
-                "albumn-name": "When I Woke",
-                "song-duration": 227,
-                "song-art": "assests/img/song.png"
+                "song_title": "Send Me On My Way",
+                "song_author": "Rusted Root",
+                "albumn_name": "When I Woke",
+                "song_duration": 227,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Drive",
-                "song-author": "Incubus",
-                "albumn-name": "Make Yourself",
-                "song-duration": 252,
-                "song-art": "assests/img/song.png"
+                "song_title": "Drive",
+                "song_author": "Incubus",
+                "albumn_name": "Make Yourself",
+                "song_duration": 252,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "On The Road Again",
-                "song-author": "Willie Nelson",
-                "albumn-name": "Honeysuckle Rose",
-                "song-duration": 142,
-                "song-art": "assests/img/song.png"
+                "song_title": "On The Road Again",
+                "song_author": "Willie Nelson",
+                "albumn_name": "Honeysuckle Rose",
+                "song_duration": 142,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Born to Run",
-                "song-author": "Bruce Springsteen",
-                "albumn-name": "Born to Run",
-                "song-duration": 279,
-                "song-art": "assests/img/song.png"
+                "song_title": "Born to Run",
+                "song_author": "Bruce Springsteen",
+                "albumn_name": "Born to Run",
+                "song_duration": 279,
+                "song_art": "assests/img/song.png"
             }
         ]
     },
@@ -211,46 +211,46 @@ const playlistData = [
         "like_count": 15,
         "songs": [
             {
-                "song-title": "Smells Like Teen Spirit",
-                "song-author": "Nirvana",
-                "albumn-name": "Nevermind",
-                "song-duration": 301,
-                "song-art": "assests/img/song.png"
+                "song_title": "Smells Like Teen Spirit",
+                "song_author": "Nirvana",
+                "albumn_name": "Nevermind",
+                "song_duration": 301,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Billie Jean",
-                "song-author": "Michael Jackson",
-                "albumn-name": "Thriller",
-                "song-duration": 294,
-                "song-art": "assests/img/song.png"
+                "song_title": "Billie Jean",
+                "song_author": "Michael Jackson",
+                "albumn_name": "Thriller",
+                "song_duration": 294,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "No Scrubs",
-                "song-author": "TLC",
-                "albumn-name": "FanMail",
-                "song-duration": 214,
-                "song-art": "assests/img/song.png"
+                "song_title": "No Scrubs",
+                "song_author": "TLC",
+                "albumn_name": "FanMail",
+                "song_duration": 214,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Wannabe",
-                "song-author": "Spice Girls",
-                "albumn-name": "Spice",
-                "song-duration": 172,
-                "song-art": "assests/img/song.png"
+                "song_title": "Wannabe",
+                "song_author": "Spice Girls",
+                "albumn_name": "Spice",
+                "song_duration": 172,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Waterfalls",
-                "song-author": "TLC",
-                "albumn-name": "CrazySexyCool",
-                "song-duration": 242,
-                "song-art": "assests/img/song.png"
+                "song_title": "Waterfalls",
+                "song_author": "TLC",
+                "albumn_name": "CrazySexyCool",
+                "song_duration": 242,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "I Want It That Way",
-                "song-author": "Backstreet Boys",
-                "albumn-name": "Millennium",
-                "song-duration": 213,
-                "song-art": "assests/img/song.png"
+                "song_title": "I Want It That Way",
+                "song_author": "Backstreet Boys",
+                "albumn_name": "Millennium",
+                "song_duration": 213,
+                "song_art": "assests/img/song.png"
             }
         ]
     },
@@ -262,46 +262,46 @@ const playlistData = [
         "like_count": 7,
         "songs": [
             {
-                "song-title": "Weightless",
-                "song-author": "Marconi Union",
-                "albumn-name": "Weightless",
-                "song-duration": 505,
-                "song-art": "assests/img/song.png"
+                "song_title": "Weightless",
+                "song_author": "Marconi Union",
+                "albumn_name": "Weightless",
+                "song_duration": 505,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Clair de Lune",
-                "song-author": "Claude Debussy",
-                "albumn-name": "Suite bergamasque",
-                "song-duration": 300,
-                "song-art": "assests/img/song.png"
+                "song_title": "Clair de Lune",
+                "song_author": "Claude Debussy",
+                "albumn_name": "Suite bergamasque",
+                "song_duration": 300,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Electra",
-                "song-author": "Airstream",
-                "albumn-name": "Electra",
-                "song-duration": 360,
-                "song-art": "assests/img/song.png"
+                "song_title": "Electra",
+                "song_author": "Airstream",
+                "albumn_name": "Electra",
+                "song_duration": 360,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Experience",
-                "song-author": "Ludovico Einaudi",
-                "albumn-name": "In a Time Lapse",
-                "song-duration": 381,
-                "song-art": "assests/img/song.png"
+                "song_title": "Experience",
+                "song_author": "Ludovico Einaudi",
+                "albumn_name": "In a Time Lapse",
+                "song_duration": 381,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Merry Christmas Mr. Lawrence",
-                "song-author": "Ryuichi Sakamoto",
-                "albumn-name": "Merry Christmas Mr. Lawrence",
-                "song-duration": 295,
-                "song-art": "assests/img/song.png"
+                "song_title": "Merry Christmas Mr. Lawrence",
+                "song_author": "Ryuichi Sakamoto",
+                "albumn_name": "Merry Christmas Mr. Lawrence",
+                "song_duration": 295,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Nuvole Bianche",
-                "song-author": "Ludovico Einaudi",
-                "albumn-name": "Una Mattina",
-                "song-duration": 360,
-                "song-art": "assests/img/song.png"
+                "song_title": "Nuvole Bianche",
+                "song_author": "Ludovico Einaudi",
+                "albumn_name": "Una Mattina",
+                "song_duration": 360,
+                "song_art": "assests/img/song.png"
             }
         ]
     },
@@ -314,46 +314,46 @@ const playlistData = [
         "like_count": 20,
         "songs": [
             {
-                "song-title": "Uptown Funk",
-                "song-author": "Mark Ronson ft. Bruno Mars",
-                "albumn-name": "Uptown Special",
-                "song-duration": 269,
-                "song-art": "assests/img/song.png"
+                "song_title": "Uptown Funk",
+                "song_author": "Mark Ronson ft. Bruno Mars",
+                "albumn_name": "Uptown Special",
+                "song_duration": 269,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Can’t Stop the Feeling!",
-                "song-author": "Justin Timberlake",
-                "albumn-name": "Trolls Soundtrack",
-                "song-duration": 236,
-                "song-art": "assests/img/song.png"
+                "song_title": "Can’t Stop the Feeling!",
+                "song_author": "Justin Timberlake",
+                "albumn_name": "Trolls Soundtrack",
+                "song_duration": 236,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "24K Magic",
-                "song-author": "Bruno Mars",
-                "albumn-name": "24K Magic",
-                "song-duration": 225,
-                "song-art": "assests/img/song.png"
+                "song_title": "24K Magic",
+                "song_author": "Bruno Mars",
+                "albumn_name": "24K Magic",
+                "song_duration": 225,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Party Rock Anthem",
-                "song-author": "LMFAO",
-                "albumn-name": "Sorry for Party Rocking",
-                "song-duration": 257,
-                "song-art": "assests/img/song.png"
+                "song_title": "Party Rock Anthem",
+                "song_author": "LMFAO",
+                "albumn_name": "Sorry for Party Rocking",
+                "song_duration": 257,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "TiK ToK",
-                "song-author": "Kesha",
-                "albumn-name": "Animal",
-                "song-duration": 200,
-                "song-art": "assests/img/song.png"
+                "song_title": "TiK ToK",
+                "song_author": "Kesha",
+                "albumn_name": "Animal",
+                "song_duration": 200,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Get Lucky",
-                "song-author": "Daft Punk ft. Pharrell Williams",
-                "albumn-name": "Random Access Memories",
-                "song-duration": 248,
-                "song-art": "assests/img/song.png"
+                "song_title": "Get Lucky",
+                "song_author": "Daft Punk ft. Pharrell Williams",
+                "albumn_name": "Random Access Memories",
+                "song_duration": 248,
+                "song_art": "assests/img/song.png"
             }
         ]
     },
@@ -365,46 +365,46 @@ const playlistData = [
         "like_count": 11,
         "songs": [
             {
-                "song-title": "Dog Days Are Over",
-                "song-author": "Florence + The Machine",
-                "albumn-name": "Lungs",
-                "song-duration": 258,
-                "song-art": "assests/img/song.png"
+                "song_title": "Dog Days Are Over",
+                "song_author": "Florence + The Machine",
+                "albumn_name": "Lungs",
+                "song_duration": 258,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Electric Indigo",
-                "song-author": "The Paper Kites",
-                "albumn-name": "On the Train Ride Home",
-                "song-duration": 219,
-                "song-art": "assests/img/song.png"
+                "song_title": "Electric Indigo",
+                "song_author": "The Paper Kites",
+                "albumn_name": "On the Train Ride Home",
+                "song_duration": 219,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Youth",
-                "song-author": "Daughter",
-                "albumn-name": "If You Leave",
-                "song-duration": 260,
-                "song-art": "assests/img/song.png"
+                "song_title": "Youth",
+                "song_author": "Daughter",
+                "albumn_name": "If You Leave",
+                "song_duration": 260,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Holocene",
-                "song-author": "Bon Iver",
-                "albumn-name": "Bon Iver, Bon Iver",
-                "song-duration": 335,
-                "song-art": "assests/img/song.png"
+                "song_title": "Holocene",
+                "song_author": "Bon Iver",
+                "albumn_name": "Bon Iver, Bon Iver",
+                "song_duration": 335,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Ophelia",
-                "song-author": "The Lumineers",
-                "albumn-name": "Cleopatra",
-                "song-duration": 174,
-                "song-art": "assests/img/song.png"
+                "song_title": "Ophelia",
+                "song_author": "The Lumineers",
+                "albumn_name": "Cleopatra",
+                "song_duration": 174,
+                "song_art": "assests/img/song.png"
             },
             {
-                "song-title": "Clearest Blue",
-                "song-author": "CHVRCHES",
-                "albumn-name": "Every Open Eye",
-                "song-duration": 299,
-                "song-art": "assests/img/song.png"
+                "song_title": "Clearest Blue",
+                "song_author": "CHVRCHES",
+                "albumn_name": "Every Open Eye",
+                "song_duration": 299,
+                "song_art": "assests/img/song.png"
             }
         ]
     }
