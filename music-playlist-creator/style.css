@@ -63,8 +63,9 @@ p {
 
 #featured-content {
     display: flex;
-    position: absolute;
-    top: 25%;
+    margin: 10% auto;
+    
+    padding: 20% auto;
 }
 
 .featured-playlist-info {
@@ -81,7 +82,8 @@ p {
 .featured-cover {
     display: block;
     margin: auto;
-    width: 85%;
+    width: 500px;
+    height: 500px;
 }
 
 .featured-song-art {
@@ -174,12 +176,11 @@ p {
 }
 
 #modal-content {
-   background-color: #fefefe;
-   color: black;
+   background-color: black;
+   color: #f8f8f8;
    margin: auto; /* 15% from the top and centered */
-   border: 0px solid #888;
    width: 35%; /* Could be more or less, depending on screen size */
-   border: white 3px solid;
+   border: rgb(69, 69, 69) 3px solid;
    border-radius: 8px;
    position: absolute;
    left: 50%;
@@ -195,7 +196,7 @@ p {
 }
 
 .close:hover, .close:focus {
-    color: black;
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }
@@ -259,9 +260,11 @@ p {
 .modal-header{
     display: flex;
     margin-bottom: 20px;
+    height: 50%;
 }
 
 #modal-playlist-cover {
     display: block;
-    width: 25%;
+    width: 300px;
+    height: 300px;
 }
