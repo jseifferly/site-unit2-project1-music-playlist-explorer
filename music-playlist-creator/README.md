@@ -2,7 +2,7 @@
 
 Submitted by: **Jackson Seifferly**
 
-Estimated time spent: **9** hours spent in total
+Estimated time spent: **12** hours spent in total
 
 Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD_LINK_HERE)
 
