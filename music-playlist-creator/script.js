@@ -52,7 +52,6 @@ function openModal(playlist) {
 
 for(i = 0; i < playlists.length; i++){
     playlists[i].addEventListener("click", () => {
-        console.log(playlistData[0])
         openModal(playlistData[0])
     })
 }
@@ -65,11 +64,7 @@ window.onclick = function(event) {
 
 function populateModal(playlist){
     const modal_content = document.getElementById('modal-content');
-
-    const closeElement = document.createElement('span');
-    closeElement.className = 'close';
-    closeElement.textContent = '&times;'
-    modal_content.appendChild(closeElement);
+    modal_content.innerHTML = ``
 
     const header = createModalHeaderElement(playlist);
     modal_content.appendChild(header);
@@ -86,7 +81,7 @@ close_button.addEventListener("click", () => {
 function createModalHeaderElement(playlist){
     const div = document.createElement('div');
     div.className = 'modal-header';
-    div.innerHTML = `<img id="modal-playlist-cover" src=${playlist.playlist_art} alt="">
+    div.innerHTML = `<img id="modal-playlist-cover" src="${playlist.playlist_art}" alt="">
                     <div class="playlist-info">
                     <h2 id="modal-title">${playlist.playlist_name}</h2>
                     <h3 id="modal-creator">${playlist.playlist_author}</h3>
@@ -98,7 +93,6 @@ function createModalHeaderElement(playlist){
 function createModalSongList(songs){
     const div = document.createElement('div');
     div.className = 'song-list';
-    console.log(songs);
     for (i = 0; i < songs.length; i++) {
         const songElement = createModalSongTile(songs[i]);
         div.appendChild(songElement);
@@ -111,7 +105,7 @@ function createModalSongTile(song){
     const div = document.createElement('article');
     div.className = 'song-tile';
     div.innerHTML = `
-        <img class="song-cover" src=${song.song_art} alt="">
+        <img class="song-cover" src="${song.song_art}" alt="">
         <div class="song-info">
             <h5 class="song-title">${song.song_title}</h5>
             <h6 class="artist-name">${song.song_author}</h6>

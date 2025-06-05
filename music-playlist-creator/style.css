@@ -141,7 +141,8 @@ p {
 }
 
 .song-list {
-    overflow: auto;
+    overflow-y: auto;
+    height: 300px;
 }
 
 .song-tile {
@@ -150,7 +151,7 @@ p {
     border: 3px solid white;
     border-radius: 7px;
     padding: 5px;
-    height: 10%;
+    height: 100px;
 }
 
 .playlist-info {
@@ -180,8 +181,7 @@ p {
 }
 
 .song-duration {
-    position: absolute;
-    right: 5%;
+    float: right;
 }
 
 #modal-header{
