@@ -1,5 +1,6 @@
 const modal = document.getElementById("modal");
 const songsArray = playlistData.map((currentValue) => {return currentValue.songs})
+const newSongs = []
 
 
 //**--------------------------DYNAMICALLY LOAD PLAYLIST DATA--------------------------**//
@@ -229,11 +230,141 @@ function shuffleArray(arr){
 const deleteIcons = playlists.map((currentValue) => {return currentValue.querySelector('.delete-playlist')})
 
 deleteIcons.forEach ( icon => {
-    icon.addEventListener('click', (event) => {
+    icon.addEventListener('click', () => {
         const clickedIndex = deleteIcons.indexOf(icon);
         playlists[clickedIndex].remove();
 
     })
 })
+
+//------------------------------------------------------------------------------------------------//
+
+//**-------------------------------------ADD FUNCTIONALITY--------------------------------------**//
+
+//add event listner to the add playlist button
+const addButton = document.querySelector('.add-playlist');
+addButton.addEventListener('click', () => {
+    newSongs.length = 0;
+    openAddModal();
+    
+})
+
+
+//populate modal with add playlist form
+function openAddModal() {
+    populateAddModal();
+    modal.style.display = "block";
+}
+
+function populateAddModal(){
+    const modal_content = document.getElementById('modal-content');
+    modal_content.innerHTML = ``
+
+    const span = document.createElement('span');
+    span.className = 'close';
+    span.innerHTML = '&times;';
+    span.addEventListener("click", () => {
+        modal.style.display = "none"
+    })
+    modal_content.appendChild(span);
+
+    const playlistInput = createNewPlaylistInfoElement();
+    modal_content.appendChild(playlistInput);
+    
+    const playlistSubmit = document.querySelector('.add-playlist-form');
+    playlistSubmit.addEventListener("submit", (event) => {
+        addPlaylistToList(event);
+    })
+
+    const songInput = createAddSongListElement();
+    modal_content.appendChild(songInput);
+
+    const songSubmit = document.querySelector('.add-song-form');
+    songSubmit.addEventListener("submit", (event) => {
+        addSongToList(event);
+    })
+
+}
+
+function createNewPlaylistInfoElement() {
+    const div = document.createElement('form');
+    div.className = 'add-playlist-form'
+    div.innerHTML = `
+        <h2 class='add-modal-header'>Add Playlist</h2>
+        <label for='image-file'>Add Playlist Cover:</label><br>
+        <input type='file' id='image-file' name='input-image'><br>
+        <label for='name-in'>Playlist Name:</label><br>
+        <input type='text' id='name-in' name='name-in'><br>
+        <label for='author-in'>Author Name:</label><br>
+        <input type='text' id='author-in' name='author-in'><br>
+        <input type='submit' value='Create New Playlist'>
+    `
+    return div;
+}
+
+function createAddSongListElement() {
+    const div = document.createElement('section');
+    div.className = 'addSongList';
+    div.innerHTML = `
+        <form class='add-song-form'>
+        <label for='add-song-name'>Song Name: </label>
+        <input type='text' id='add-song-name' name='add-song-name'>
+        <label for='add-song-artist'>Artist: </label>
+        <input type='text' id='add-song-artist' name='add-song-artist'>
+        <input type='submit' value="Add Song">
+        </form>
+    `
+
+    const newSongList = createModalSongList(newSongs);
+    div.appendChild(newSongList);
+    return div;
+}
+
+function addSongToList(event) {
+    event.preventDefault();
+
+    const title = document.getElementById('add-song-name').value;
+    const artist = document.getElementById('add-song-artist').value;
+    const albumn = ''
+    const duration = 0
+    const img = "assets/img/song.png"
+
+    const newSong = {
+        song_title: title,
+        song_author: artist,
+        albumn_name: albumn,
+        song_duration: duration,
+        song_art: img
+    }
+
+    newSongs.push(newSong);
+    const songList = document.querySelector('.song-list');
+    songList.appendChild(createModalSongTile(newSong));
+    event.target.reset();
+}
+
+function addPlaylistToList(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name-in').value;
+    const author = document.getElementById('author-in').value;
+    const cover = document.getElementById('image-file').value;
+
+    const newPlaylist = {
+        playlistID: playlists.length,
+        playlist_name: name,
+        playlist_author: author,
+        playlist_art: cover,
+        like_count: 0,
+        liked: false,
+        songs: newSongs
+    }
+    
+    playlistData.push(newPlaylist);
+    const playlistGrid = document.getElementById('playlist-cards');
+    playlistGrid.appendChild(createPlaylistElement(newPlaylist))
+    event.target.reset();
+}
+
 
 //------------------------------------------------------------------------------------------------//

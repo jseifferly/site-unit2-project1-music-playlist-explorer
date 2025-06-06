@@ -20,8 +20,8 @@ footer {
     background-color: rgb(48, 124, 248);
     background: linear-gradient(rgb(18, 104, 244), rgb(30, 71, 185));
     color: rgb(83, 83, 83);
-    margin-top: 20px;
-    padding: 15px 100px 5px 50px;
+    margin-top: 10px;
+    padding: 2px;
     border-top:  solid rgb(54, 28, 182) 2px;
     position: fixed;
     left: 0;
@@ -55,7 +55,7 @@ p {
     color: rgb(50, 50, 50);
     font-size: 20px;
     font-family:Arial, Helvetica, sans-serif;
-    position: fixed;
+    position: absolute;
     right: 5%;
     top: 3%;
     text-decoration: none;
@@ -315,8 +315,8 @@ p {
 
 #modal-playlist-cover {
     display: block;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border-radius: 7px;
     margin: 3px;
 }
