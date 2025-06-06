@@ -206,6 +206,7 @@ p {
    color: #f8f8f8;
    margin: auto; /* 15% from the top and centered */
    width: 35%; /* Could be more or less, depending on screen size */
+   height: 70%;
    border: rgb(69, 69, 69) 3px solid;
    border-radius: 8px;
    position: absolute;
@@ -249,7 +250,7 @@ p {
 
 .song-list {
     overflow-y: auto;
-    height: 400px;
+    height: 45%;
     color: white;
     scrollbar-color: black rgb(61, 61, 61);
 }
@@ -350,6 +351,7 @@ p {
     font-size: 100%;
     background-color: rgb(83, 83, 248);
     border-radius: 10px;
+    border: none;
     color: white;
     margin: 0 35%;
     margin-bottom: 5%;
@@ -368,6 +370,7 @@ p {
     font-size: 100%;
     background-color: rgb(83, 83, 248);
     border-radius: 10px;
+    border: none;
     color: white;
  }
 
@@ -375,3 +378,41 @@ p {
     background-color: rgb(143, 143, 248);
     cursor: pointer;
  }
+
+ .dropbtn {
+    background-color: rgb(71, 71, 255);
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 7px;
+ }
+
+ .dropdown {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+ }
+
+ .dropdown:hover .dropdown-content {display:block}
+
+ .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(97, 97, 253);
+    color: white;
+    min-width: 80px;
+    z-index: 1;
+ }
+
+ .dropdown-content button {
+    border: none;
+    font-size: 20px;
+    background-color: rgb(97, 97, 253);
+    color: white;
+ }
+
+.dropdown-content button:hover {
+    background-color: rgb(123, 123, 250);
+    cursor: pointer;
+} 

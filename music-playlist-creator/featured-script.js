@@ -56,5 +56,4 @@ function createSongElement(song) {
 }
 
 const featuredPlaylist = selectRandomPlaylist();
-console.log(featuredPlaylist);
 loadFeaturedPage(featuredPlaylist);

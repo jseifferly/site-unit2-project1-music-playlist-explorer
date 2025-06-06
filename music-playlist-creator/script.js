@@ -8,6 +8,8 @@ const newSongs = []
 
 function loadPlaylistData(){
 
+    playlistGrid.innerHTML = ``
+
     if(playlistData.length === 0){
         const element = noPlaylistsMessage();
         playlistGrid.appendChild(element);
@@ -188,9 +190,8 @@ function addLikeFunction(){
     const likeIcons = playlists.map((currentValue) => { return currentValue.querySelector('.like-icon') })
     const likeCounts = playlists.map((currentValue) => { return currentValue.querySelector('.like-number') })
 
-    console.log(likeIcons);
-
     likeIcons.forEach ( likeIcon => {
+
         likeIcon.addEventListener("click", (event) => {
 
             const clickedIndex = likeIcons.indexOf(likeIcon);
@@ -247,7 +248,6 @@ function addDeleteFunction() {
     const playlists = Array.from(document.querySelectorAll(".playlist"));
     const deleteIcons = playlists.map((currentValue) => {return currentValue.querySelector('.delete-playlist')})
 
-    console.log(deleteIcons)
     deleteIcons.forEach ( icon => {
         icon.addEventListener('click', () => {
             const clickedIndex = deleteIcons.indexOf(icon);
@@ -263,22 +263,27 @@ addDeleteFunction();
 //------------------------------------------------------------------------------------------------//
 
 function refreshPlaylists(){
-    
+    loadPlaylistData();
     createPlaylistEventListeners();
     addDeleteFunction();
     addLikeFunction();
-
+    createAddPlaylistEvent();
 }
 
 //**-------------------------------------ADD FUNCTIONALITY--------------------------------------**//
 
 //add event listner to the add playlist button
-const addButton = document.querySelector('.add-playlist');
-addButton.addEventListener('click', () => {
-    newSongs.length = 0;
-    openAddModal();
-    
-})
+
+function createAddPlaylistEvent(){
+    const addButton = document.querySelector('.add-playlist');
+    addButton.addEventListener('click', () => {
+        newSongs.length = 0;
+        openAddModal();
+
+    })
+}
+
+createAddPlaylistEvent();
 
 
 //populate modal with add playlist form
@@ -400,14 +405,43 @@ function addNewPlaylist(playlist) {
     
     //Add to js data
     playlistData.push(playlist)
-    console.log(playlistData)
 
     //Append to grid
-    const playlistGrid = document.getElementById('playlist-cards');
-    const playlistElement = createPlaylistElement(playlist)
-    playlistGrid.appendChild(playlistElement)
     refreshPlaylists();
 
 }
+
+//------------------------------------------------------------------------------------------------//
+
+
+//**------------------------------------SORT FUNCTIONALITY--------------------------------------**//
+
+//Add event listeners to each sort
+
+const titleSortElement = document.querySelector('.alpha-sort')
+const likeSortElement = document.querySelector('.like-sort')
+const dateSortElement = document.querySelector('.date-sort')
+
+
+titleSortElement.addEventListener('click', () => {
+
+    playlistData.sort((a,b) => a.playlist_name.localeCompare(b.playlist_name));
+    refreshPlaylists();
+})
+
+likeSortElement.addEventListener('click', () => {
+
+    playlistData.sort((a,b) => b.like_count - a.like_count)
+    refreshPlaylists();
+
+})
+
+dateSortElement.addEventListener('click', () => {
+
+    playlistData.sort((a,b) => a.playlistID - b.playlistID)
+    refreshPlaylists();
+
+})
+
 
 //------------------------------------------------------------------------------------------------//
