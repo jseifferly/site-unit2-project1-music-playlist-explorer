@@ -6,6 +6,7 @@ const newSongs = []
 
 //**--------------------------DYNAMICALLY LOAD PLAYLIST DATA--------------------------**//
 
+//Pull data from .js file and dynamically load playlists as well as additional features
 function loadPlaylistData(){
 
     playlistGrid.innerHTML = ``
@@ -66,6 +67,7 @@ const playlists = Array.from(document.querySelectorAll(".playlist"));
 
 //**---------------------MODAL FUNCTIONALLITY AND DYNAMICALLY POPULATE MODAL---------------------**//
 
+//Open Playlist details modal
 function openModal(playlist) {
     populateModal(playlist);
     modal.style.display = "block";
@@ -84,7 +86,6 @@ function openModal(playlist) {
 }
 
 //Create event listners for each playlist and display modal on click
-
 function createPlaylistEventListeners() {
     const playlists = Array.from(document.querySelectorAll(".playlist"));
     for(i = 0; i < playlists.length; i++){
@@ -94,7 +95,9 @@ function createPlaylistEventListeners() {
 
             if(event.target.className == 'playlist'){
                 clickedIndex = playlists.indexOf(event.target)
-            }else if(event.target.className == 'like-icon' || event.target.className == 'like-number' || event.target.className == 'delete-playlist'){
+            }else if(event.target.className == 'like-icon' || event.target.className == 'like-number'
+                 || event.target.className == 'delete-playlist' || event.target.className == 'edit-playlist'
+                || event.target.className == 'edit-title' || event.target.className == 'edit-author' ){
                 return;
             }else {
                 clickedIndex = playlists.indexOf(event.target.parentNode)
@@ -139,6 +142,7 @@ function populateModal(playlist){
 
 //**--------------------------CREATE EACH OF THE MODAL ELEMENTS TO ADD--------------------------**//
 
+//Create the Header element for the playlist details modal
 function createModalHeaderElement(playlist){
     const div = document.createElement('div');
     div.className = 'modal-header';
@@ -153,6 +157,7 @@ function createModalHeaderElement(playlist){
     return div;
 }
 
+//Create the song list element for the playlist details modal
 function createModalSongList(songs){
     const div = document.createElement('div');
     div.className = 'song-list';
@@ -164,6 +169,7 @@ function createModalSongList(songs){
     return div;
 }
 
+//Create a song tile to insert into our playlist details song list
 function createModalSongTile(song){
     const div = document.createElement('article');
     div.className = 'song-tile';
@@ -183,6 +189,7 @@ function createModalSongTile(song){
 
 //**---------------------------------LIKE BUTTON FUNCTIONALITY---------------------------------**//
 
+//Pull like icons and add event handlers for icons and counts
 function addLikeFunction(){
 
     //add event listners
@@ -227,6 +234,7 @@ addLikeFunction();
 
 //**------------------------------------SHUFFLE SONGS FEATURE------------------------------------**/
 
+//Randomly shuffle array function for the shuffle feature
 function shuffleArray(arr){
     for(i = arr.length - 1; i > 0; i--){
         let randIndex = Math.floor(Math.random() * (i - 1));
@@ -242,7 +250,7 @@ function shuffleArray(arr){
 
 //**------------------------------------DELETE FUNCTIONALITY------------------------------------**//
 
-//add event listenrs
+//Create event listener for each of the delete icons and remove playlist on event
 function addDeleteFunction() {
 
     const playlists = Array.from(document.querySelectorAll(".playlist"));
@@ -262,18 +270,19 @@ addDeleteFunction();
 
 //------------------------------------------------------------------------------------------------//
 
+//Refresh the playlist grid for additions and deletions, re-adds all event handlers and tiles
 function refreshPlaylists(){
     loadPlaylistData();
     createPlaylistEventListeners();
     addDeleteFunction();
     addLikeFunction();
+    addEditEventListners();
     createAddPlaylistEvent();
 }
 
 //**-------------------------------------ADD FUNCTIONALITY--------------------------------------**//
 
 //add event listner to the add playlist button
-
 function createAddPlaylistEvent(){
     const addButton = document.querySelector('.add-playlist');
     addButton.addEventListener('click', () => {
@@ -292,6 +301,7 @@ function openAddModal() {
     modal.style.display = "block";
 }
 
+//Populate the modal with the details for the add playlist form
 function populateAddModal(){
     const modal_content = document.getElementById('modal-content');
     modal_content.innerHTML = ``
@@ -322,6 +332,7 @@ function populateAddModal(){
 
 }
 
+//Create form element for the new playlists details
 function createNewPlaylistInfoElement() {
     const div = document.createElement('form');
     div.className = 'add-playlist-form'
@@ -338,6 +349,7 @@ function createNewPlaylistInfoElement() {
     return div;
 }
 
+//Create form element for the new playlists song list
 function createAddSongListElement() {
     const div = document.createElement('section');
     div.className = 'addSongList';
@@ -356,6 +368,7 @@ function createAddSongListElement() {
     return div;
 }
 
+//On submission of song create a new song object and add it to the songs array to be pushed to the new playlist element
 function addSongToList(event) {
     event.preventDefault();
 
@@ -379,6 +392,7 @@ function addSongToList(event) {
     event.target.reset();
 }
 
+//On submission creates new playlist object and adds playlist to the grid
 function addPlaylistToList(event) {
     event.preventDefault();
 
@@ -396,19 +410,10 @@ function addPlaylistToList(event) {
         songs: newSongs
     }
     
-    addNewPlaylist(newPlaylist);
+    playlistData.push(newPlaylist);
+    refreshPlaylists();
     modal.style.display = "none";
     event.target.reset();
-}
-
-function addNewPlaylist(playlist) {
-    
-    //Add to js data
-    playlistData.push(playlist)
-
-    //Append to grid
-    refreshPlaylists();
-
 }
 
 //------------------------------------------------------------------------------------------------//
@@ -416,12 +421,12 @@ function addNewPlaylist(playlist) {
 
 //**------------------------------------SORT FUNCTIONALITY--------------------------------------**//
 
-//Add event listeners to each sort
-
+//Pull sort button elements
 const titleSortElement = document.querySelector('.alpha-sort')
 const likeSortElement = document.querySelector('.like-sort')
 const dateSortElement = document.querySelector('.date-sort')
 
+//-----------------Event listeners for each sort button------------//
 
 titleSortElement.addEventListener('click', () => {
 
@@ -442,6 +447,87 @@ dateSortElement.addEventListener('click', () => {
     refreshPlaylists();
 
 })
+//-------------------------------------------------------------------//
+
+
+//------------------------------------------------------------------------------------------------//
+
+//**------------------------------------EDIT FUNCTIONALITY--------------------------------------**//
+
+//Add event listners for all edit buttons
+function addEditEventListners() {
+    const playlists = Array.from(document.querySelectorAll(".playlist"));
+    const editIcons = playlists.map((currentValue) => {return currentValue.querySelector('.edit-playlist')})
+
+    editIcons.forEach(icon => {
+        icon.addEventListener('click', () => {
+
+            const clickedIndex = editIcons.indexOf(icon)
+            openEdit(playlists[clickedIndex]);
+
+        })
+    })
+}
+
+addEditEventListners();
+
+//Add an edit modal to change the current playlist name, author, or songs
+function openEdit(playlist) {
+
+    const oldTitle = playlist.querySelector('.playlist-title');
+    const newInput = document.createElement('input');
+    newInput.type = 'text'
+    newInput.className = 'edit-title'
+    newInput.value = oldTitle.textContent
+    oldTitle.replaceWith(newInput);
+
+    const oldAuthor = playlist.querySelector('.playlist-creator-name');
+    const newInputAuth = document.createElement('input');
+    newInputAuth.type = 'text'
+    newInputAuth.className = 'edit-author'
+    newInputAuth.value = oldAuthor.textContent
+    oldAuthor.replaceWith(newInputAuth);
+
+    editTitleEvent(playlist);
+    editAuthorEvent(playlist);
+}
+
+function editTitleEvent(playlist) {
+
+    const input = playlist.querySelector('.edit-title');
+
+    input.addEventListener('keyup', (event) => {
+        if(event.key === "Enter"){
+            const inputAuth = playlist.querySelector('.edit-author')
+            inputAuth.focus()
+        }
+    })
+}
+
+function editAuthorEvent(playlist) {
+
+    const input = playlist.querySelector('.edit-author');
+
+    input.addEventListener('keyup', (event) =>{
+        if(event.key === "Enter"){
+            //Store new data
+            const newTitle = playlist.querySelector('.edit-title').value
+            const newAuthor = playlist.querySelector('.edit-author').value
+
+            //update in playlist data
+            const playlists = Array.from(document.querySelectorAll(".playlist"));
+            const idx = playlists.findIndex(p => p === playlist)
+
+            playlistData[idx].playlist_name = newTitle;
+            playlistData[idx].playlist_author = newAuthor;
+
+            //refresh page
+            refreshPlaylists();
+
+        }
+    })
+}
+
 
 
 //------------------------------------------------------------------------------------------------//
