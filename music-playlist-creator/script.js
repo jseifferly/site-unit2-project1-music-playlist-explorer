@@ -394,7 +394,7 @@ function addPlaylistToList(event) {
     if(fileList.files.length === 0){
         var cover = 'assets/img/playlist.png'
     }else{
-        var cover = document.getElementById('image-file').files[0].name;
+        var cover = 'assets/img/' + document.getElementById('image-file').files[0].name;
     }
 
     const newPlaylist = {
