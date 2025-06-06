@@ -63,6 +63,7 @@ p {
 
 #featured-content {
     display: flex;
+    flex-wrap: wrap;
     margin: 5% auto;
     padding: 20% auto;
 }

@@ -2,7 +2,7 @@
 
 -shuffle multiple times
 
--refresh featured page more than once
+-Like a playlist with 0 likes and with more than zero
 
 -Add a playlist
 
@@ -18,3 +18,4 @@
 
 -use search feature
 
+-refresh featured page more than once

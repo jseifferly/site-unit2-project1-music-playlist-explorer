@@ -41,7 +41,7 @@ function createPlaylistElement(playlist){
         </div>
         <div class='playlist-actions'>
         <span class='delete-playlist'>&#9940;</span>
-        <span class='edit-playlist'>&#128221;</span>
+        <span class='edit-playlist'>...</span>
         </div>
     `;
     return div;
@@ -388,13 +388,20 @@ function addPlaylistToList(event) {
 
     const name = document.getElementById('name-in').value;
     const author = document.getElementById('author-in').value;
-    const cover = document.getElementById('image-file').files[0].name;
+
+    const fileList = document.getElementById('image-file')
+
+    if(fileList.files.length === 0){
+        var cover = 'assets/img/playlist.png'
+    }else{
+        var cover = document.getElementById('image-file').files[0].name;
+    }
 
     const newPlaylist = {
         playlistID: ++playlists.length,
         playlist_name: name,
         playlist_author: author,
-        playlist_art: 'assets/img/' + cover,
+        playlist_art: cover,
         like_count: 0,
         liked: false,
         songs: newSongs

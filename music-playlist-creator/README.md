@@ -2,7 +2,7 @@
 
 Submitted by: **Jackson Seifferly**
 
-Estimated time spent: **18** hours spent in total
+Estimated time spent: **20** hours spent in total
 
 Deployed Application (**required**): [https://site-unit2-project1-music-playlist-u5sr.onrender.com]
 
