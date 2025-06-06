@@ -109,13 +109,13 @@ Deployed Application (**required**): [https://site-unit2-project1-music-playlist
     - [x] Text input field
     - [x] Submit/Search Button
     - [x] Clear Button
-  - [ ] Playlists matching the search query in the text input are displayed in a grid view when the user:
+  - [x] Playlists matching the search query in the text input are displayed in a grid view when the user:
     - [x] Presses the Enter Key
     - [x] Clicks the Submit/Search Button 
   - [x] User can click the clear button. When clicked:
     - [x] All text in the text input field is deleted
     - [x] All playlists in the `data.json` file are displayed in a grid view
-    - [ ] **Optional:** If the Add Playlist, Edit Existing Playlist, or Delete Playlist stretch features were implemented:
+    - [x] **Optional:** If the Add Playlist, Edit Existing Playlist, or Delete Playlist stretch features were implemented:
       - [x] If users can add a playlist, added playlists should be included in search results.
       - [x] If users can edit a playlist, search results should reflect the latest edits to each playlist.
       - [x] If users can delete a playlist, deleted playlists should no longer be included in search results.
@@ -130,9 +130,9 @@ Deployed Application (**required**): [https://site-unit2-project1-music-playlist
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
+tention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
 
-`ADD_EMBEDDED_CODE_HERE`
+(https://www.loom.com/share/e38e0816b2b74f30aa9affd24de76dc9?sid=38c8f8f9-d52d-402c-9fcc-1c66cbeee35f)
 
 ### Reflection
 
