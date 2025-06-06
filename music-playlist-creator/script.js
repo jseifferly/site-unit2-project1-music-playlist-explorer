@@ -1,12 +1,12 @@
 const modal = document.getElementById("modal");
 const songsArray = playlistData.map((currentValue) => {return currentValue.songs})
+const playlistGrid = document.getElementById("playlist-cards")
 const newSongs = []
 
 
 //**--------------------------DYNAMICALLY LOAD PLAYLIST DATA--------------------------**//
 
 function loadPlaylistData(){
-    const playlistGrid = document.getElementById("playlist-cards")
 
     if(playlistData.length === 0){
         const element = noPlaylistsMessage();
@@ -292,7 +292,7 @@ function createNewPlaylistInfoElement() {
     div.innerHTML = `
         <h2 class='add-modal-header'>Add Playlist</h2>
         <label for='image-file'>Add Playlist Cover:</label><br>
-        <input type='file' id='image-file' name='input-image'><br>
+        <input type='file' id='image-file' name='input-image' accept="image/*"><br>
         <label for='name-in'>Playlist Name:</label><br>
         <input type='text' id='name-in' name='name-in'><br>
         <label for='author-in'>Author Name:</label><br>
@@ -348,23 +348,38 @@ function addPlaylistToList(event) {
 
     const name = document.getElementById('name-in').value;
     const author = document.getElementById('author-in').value;
-    const cover = document.getElementById('image-file').value;
+    const cover = document.getElementById('image-file').files[0].name;
 
     const newPlaylist = {
-        playlistID: playlists.length,
+        playlistID: ++playlists.length,
         playlist_name: name,
         playlist_author: author,
-        playlist_art: cover,
+        playlist_art: 'assets/img/' + cover,
         like_count: 0,
         liked: false,
         songs: newSongs
     }
     
-    playlistData.push(newPlaylist);
-    const playlistGrid = document.getElementById('playlist-cards');
-    playlistGrid.appendChild(createPlaylistElement(newPlaylist))
+    addNewPlaylist(newPlaylist);
+    modal.style.display = "none";
     event.target.reset();
 }
 
+function addNewPlaylist(playlist) {
+    
+    //Add to js data
+    playlistData.push(playlist)
+    console.log(playlistData)
+
+    //Append to grid
+    const playlistGrid = document.getElementById('playlist-cards');
+    const playlistElement = createPlaylistElement(playlist)
+    playlistGrid.appendChild(playlistElement)
+    playlists.push(playlistElement)
+    likeIcons.push(playlistElement.querySelector('.like-icon'))
+    likeCounts.push(playlistElement.querySelector('.like-number'))
+    deleteIcons.push(playlistElement.querySelector('.delete-playlist'))
+
+}
 
 //------------------------------------------------------------------------------------------------//

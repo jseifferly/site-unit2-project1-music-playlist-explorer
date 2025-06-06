@@ -57,7 +57,7 @@ p {
     font-family:Arial, Helvetica, sans-serif;
     position: absolute;
     right: 5%;
-    top: 3%;
+    top: 5%;
     text-decoration: none;
 }   
 
@@ -322,5 +322,5 @@ p {
 }
 
 #modal-title {
-    font-size: 25px;
+    font-size: 200%;
 }
