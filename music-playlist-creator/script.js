@@ -82,23 +82,29 @@ function openModal(playlist) {
 }
 
 //Create event listners for each playlist and display modal on click
-for(i = 0; i < playlists.length; i++){
-    playlists[i].addEventListener("click", (event) => {
 
-        let clickedIndex = -1;
+function createPlaylistEventListeners() {
+    const playlists = Array.from(document.querySelectorAll(".playlist"));
+    for(i = 0; i < playlists.length; i++){
+        playlists[i].addEventListener("click", (event) => {
 
-        if(event.target.className == 'playlist'){
-            clickedIndex = playlists.indexOf(event.target)
-        }else if(event.target.className == 'like-icon' || event.target.className == 'like-number' || event.target.className == 'delete-playlist'){
-            return;
-        }else {
-            clickedIndex = playlists.indexOf(event.target.parentNode)
-        }
+            let clickedIndex = -1;
 
-        openModal(playlistData[clickedIndex])
+            if(event.target.className == 'playlist'){
+                clickedIndex = playlists.indexOf(event.target)
+            }else if(event.target.className == 'like-icon' || event.target.className == 'like-number' || event.target.className == 'delete-playlist'){
+                return;
+            }else {
+                clickedIndex = playlists.indexOf(event.target.parentNode)
+            }
 
-    })
+            openModal(playlistData[clickedIndex])
+
+        })
+    }
 }
+
+createPlaylistEventListeners();
 
 window.onclick = function(event) {
    if (event.target == modal) {
@@ -175,36 +181,45 @@ function createModalSongTile(song){
 
 //**---------------------------------LIKE BUTTON FUNCTIONALITY---------------------------------**//
 
-//add event listners
-const likeIcons = playlists.map((currentValue) => { return currentValue.querySelector('.like-icon') })
-const likeCounts = playlists.map((currentValue) => { return currentValue.querySelector('.like-number') })
+function addLikeFunction(){
 
-likeIcons.forEach ( likeIcon => {
-    likeIcon.addEventListener("click", (event) => {
+    //add event listners
+    const playlists = Array.from(document.querySelectorAll(".playlist"));
+    const likeIcons = playlists.map((currentValue) => { return currentValue.querySelector('.like-icon') })
+    const likeCounts = playlists.map((currentValue) => { return currentValue.querySelector('.like-number') })
 
-        const clickedIndex = likeIcons.indexOf(likeIcon);
+    console.log(likeIcons);
 
-        //Get new like count
-        if(playlistData[clickedIndex].liked){
-            playlistData[clickedIndex].like_count--;
-            playlistData[clickedIndex].liked = false;
-            likeIcon.innerHTML = `&#128420;`
-        }else {
-            playlistData[clickedIndex].like_count++;
-            playlistData[clickedIndex].liked = true;
-            likeIcon.innerHTML = `&#129505;`
-        }
+    likeIcons.forEach ( likeIcon => {
+        likeIcon.addEventListener("click", (event) => {
 
-        //Update the like count
-        updateLikeCount(clickedIndex, playlistData[clickedIndex].like_count);
+            const clickedIndex = likeIcons.indexOf(likeIcon);
 
+            //Get new like count
+            if(playlistData[clickedIndex].liked){
+                playlistData[clickedIndex].like_count--;
+                playlistData[clickedIndex].liked = false;
+                likeIcon.innerHTML = `&#128420;`
+            }else {
+                playlistData[clickedIndex].like_count++;
+                playlistData[clickedIndex].liked = true;
+                likeIcon.innerHTML = `&#129505;`
+            }
+
+            //Update the like count
+            updateLikeCount(likeCounts[clickedIndex], playlistData[clickedIndex].like_count);
+
+        })
     })
-})
+
+}
 
 //Take a like count element and update the value
-function updateLikeCount(likeCountIndex, count) {
-    likeCounts[likeCountIndex].textContent = `${count}`
+function updateLikeCount(likeCount, count) {
+    likeCount.textContent = `${count}`
 }
+
+addLikeFunction();
 
 //------------------------------------------------------------------------------------------------//
 
@@ -227,17 +242,33 @@ function shuffleArray(arr){
 //**------------------------------------DELETE FUNCTIONALITY------------------------------------**//
 
 //add event listenrs
-const deleteIcons = playlists.map((currentValue) => {return currentValue.querySelector('.delete-playlist')})
+function addDeleteFunction() {
 
-deleteIcons.forEach ( icon => {
-    icon.addEventListener('click', () => {
-        const clickedIndex = deleteIcons.indexOf(icon);
-        playlists[clickedIndex].remove();
+    const playlists = Array.from(document.querySelectorAll(".playlist"));
+    const deleteIcons = playlists.map((currentValue) => {return currentValue.querySelector('.delete-playlist')})
 
+    console.log(deleteIcons)
+    deleteIcons.forEach ( icon => {
+        icon.addEventListener('click', () => {
+            const clickedIndex = deleteIcons.indexOf(icon);
+            playlists[clickedIndex].remove();
+
+        })
     })
-})
+
+}
+
+addDeleteFunction();
 
 //------------------------------------------------------------------------------------------------//
+
+function refreshPlaylists(){
+    
+    createPlaylistEventListeners();
+    addDeleteFunction();
+    addLikeFunction();
+
+}
 
 //**-------------------------------------ADD FUNCTIONALITY--------------------------------------**//
 
@@ -375,10 +406,7 @@ function addNewPlaylist(playlist) {
     const playlistGrid = document.getElementById('playlist-cards');
     const playlistElement = createPlaylistElement(playlist)
     playlistGrid.appendChild(playlistElement)
-    playlists.push(playlistElement)
-    likeIcons.push(playlistElement.querySelector('.like-icon'))
-    likeCounts.push(playlistElement.querySelector('.like-number'))
-    deleteIcons.push(playlistElement.querySelector('.delete-playlist'))
+    refreshPlaylists();
 
 }
 
