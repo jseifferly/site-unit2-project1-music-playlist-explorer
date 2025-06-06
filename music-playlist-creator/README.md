@@ -2,7 +2,7 @@
 
 Submitted by: **Jackson Seifferly**
 
-Estimated time spent: **12** hours spent in total
+Estimated time spent: **18** hours spent in total
 
 Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD_LINK_HERE)
 
@@ -103,21 +103,21 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD
 
 - [ ] **Search Functionality**
   - [ ] Implement a search bar that allows users to filter playlists by:
-    - [ ] Name 
-    - [ ] Author
+    - [x] Name 
+    - [x] Author
   - [ ] The search bar should include:
-    - [ ] Text input field
-    - [ ] Submit/Search Button
-    - [ ] Clear Button
+    - [x] Text input field
+    - [x] Submit/Search Button
+    - [x] Clear Button
   - [ ] Playlists matching the search query in the text input are displayed in a grid view when the user:
-    - [ ] Presses the Enter Key
-    - [ ] Clicks the Submit/Search Button 
+    - [x] Presses the Enter Key
+    - [x] Clicks the Submit/Search Button 
   - [ ] User can click the clear button. When clicked:
-    - [ ] All text in the text input field is deleted
-    - [ ] All playlists in the `data.json` file are displayed in a grid view
+    - [x] All text in the text input field is deleted
+    - [x] All playlists in the `data.json` file are displayed in a grid view
     - [ ] **Optional:** If the Add Playlist, Edit Existing Playlist, or Delete Playlist stretch features were implemented:
-      - [ ] If users can add a playlist, added playlists should be included in search results.
-      - [ ] If users can edit a playlist, search results should reflect the latest edits to each playlist.
+      - [x] If users can add a playlist, added playlists should be included in search results.
+      - [x] If users can edit a playlist, search results should reflect the latest edits to each playlist.
       - [ ] If users can delete a playlist, deleted playlists should no longer be included in search results.
       - **Note:** You will not be graded on the implementation of this optional subfeature to keep your grade of this stretch feature independent of your implementation of other stretch features. However, we highly suggest including this in your implementation to model realistic behavior of real applications. 
 

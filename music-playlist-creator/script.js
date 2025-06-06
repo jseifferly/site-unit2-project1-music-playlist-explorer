@@ -1,17 +1,18 @@
 const modal = document.getElementById("modal");
 const songsArray = playlistData.map((currentValue) => {return currentValue.songs})
 const playlistGrid = document.getElementById("playlist-cards")
+var renderedPlaylists = playlistData;
 const newSongs = []
 
 
 //**--------------------------DYNAMICALLY LOAD PLAYLIST DATA--------------------------**//
 
 //Pull data from .js file and dynamically load playlists as well as additional features
-function loadPlaylistData(){
+function loadPlaylistData(renderedPlaylists){
 
     playlistGrid.innerHTML = ``
 
-    if(playlistData.length === 0){
+    if(renderedPlaylists.length === 0){
         const element = noPlaylistsMessage();
         playlistGrid.appendChild(element);
     }
@@ -21,7 +22,7 @@ function loadPlaylistData(){
     addPlaylistElement.textContent = '+'
     playlistGrid.appendChild(addPlaylistElement);
 
-    playlistData.forEach(playlist => {
+    renderedPlaylists.forEach(playlist => {
         const element = createPlaylistElement(playlist);
         playlistGrid.appendChild(element);
     })
@@ -58,7 +59,7 @@ function noPlaylistsMessage() {
 }
 
 //Load the playlist data
-loadPlaylistData();
+loadPlaylistData(renderedPlaylists);
 const playlists = Array.from(document.querySelectorAll(".playlist"));
 
 //-------------------------------------------------------------------------------------------------//
@@ -259,8 +260,11 @@ function addDeleteFunction() {
     deleteIcons.forEach ( icon => {
         icon.addEventListener('click', () => {
             const clickedIndex = deleteIcons.indexOf(icon);
+            console.log(clickedIndex);
             playlists[clickedIndex].remove();
-
+            renderedPlaylists.splice(clickedIndex,1);
+            playlistData.splice(clickedIndex,1);
+            refreshPlaylists();
         })
     })
 
@@ -272,7 +276,7 @@ addDeleteFunction();
 
 //Refresh the playlist grid for additions and deletions, re-adds all event handlers and tiles
 function refreshPlaylists(){
-    loadPlaylistData();
+    loadPlaylistData(renderedPlaylists);
     createPlaylistEventListeners();
     addDeleteFunction();
     addLikeFunction();
@@ -526,6 +530,39 @@ function editAuthorEvent(playlist) {
 
         }
     })
+}
+
+//------------------------------------------------------------------------------------------------//
+
+//**------------------------------------SEARCH FUNCTIONALITY-------------------------------------**//
+
+const searchBar = document.getElementById('search-input');
+const clearSearch = document.querySelector('.search-clear');
+const submitSearch = document.querySelector('.search-submit');
+
+submitSearch.addEventListener('click', () => {
+    renderedPlaylists = filterPlaylistsFromSubstring(searchBar.value)
+    refreshPlaylists();
+
+})
+
+clearSearch.addEventListener('click', () => {
+    searchBar.value = ''
+    renderedPlaylists = playlistData;
+    refreshPlaylists();
+})
+
+searchBar.addEventListener("keypress", (event) => {
+    if(event.key === "Enter"){
+        renderedPlaylists = filterPlaylistsFromSubstring(searchBar.value)
+        refreshPlaylists();
+    }
+})
+
+function filterPlaylistsFromSubstring(substring) {
+    const playlists = playlistData.filter(item => item.playlist_name.includes(substring) || item.playlist_author.includes(substring));
+    return playlists
+
 }
 
 

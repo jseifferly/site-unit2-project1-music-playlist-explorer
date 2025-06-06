@@ -55,9 +55,9 @@ p {
     color: rgb(50, 50, 50);
     font-size: 20px;
     font-family:Arial, Helvetica, sans-serif;
-    position: absolute;
     right: 5%;
-    top: 5%;
+    top: 3%;
+    margin: auto;
     text-decoration: none;
 }   
 
@@ -172,7 +172,7 @@ p {
 }
 
 .like-icon {
-    font-size: 20px;
+    font-size: 25px;
     margin: 0;
     transition: transform .4s;
 }
@@ -231,6 +231,7 @@ p {
 .delete-playlist {
     float: right;    
     transition: transform .4s;
+    font-size: 20px;
 }
 
 .delete-playlist:hover {
@@ -241,6 +242,7 @@ p {
 .edit-playlist {
     float: left;
     transition: transform .4s;
+    font-size: 20px;
 }
 
 .edit-playlist:hover {
@@ -416,3 +418,7 @@ p {
     background-color: rgb(123, 123, 250);
     cursor: pointer;
 } 
+
+.search {
+    margin: auto;
+}
