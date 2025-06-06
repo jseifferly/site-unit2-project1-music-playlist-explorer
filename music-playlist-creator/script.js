@@ -4,7 +4,6 @@ const playlistGrid = document.getElementById("playlist-cards")
 var renderedPlaylists = playlistData;
 const newSongs = []
 
-
 //**--------------------------DYNAMICALLY LOAD PLAYLIST DATA--------------------------**//
 
 //Pull data from .js file and dynamically load playlists as well as additional features
@@ -26,8 +25,6 @@ function loadPlaylistData(renderedPlaylists){
         const element = createPlaylistElement(playlist);
         playlistGrid.appendChild(element);
     })
-
-
 }
 
 //Create a playlist element to add
@@ -63,8 +60,6 @@ loadPlaylistData(renderedPlaylists);
 const playlists = Array.from(document.querySelectorAll(".playlist"));
 
 //-------------------------------------------------------------------------------------------------//
-
-
 
 //**---------------------MODAL FUNCTIONALLITY AND DYNAMICALLY POPULATE MODAL---------------------**//
 
@@ -187,7 +182,6 @@ function createModalSongTile(song){
 
 //------------------------------------------------------------------------------------------------//
 
-
 //**---------------------------------LIKE BUTTON FUNCTIONALITY---------------------------------**//
 
 //Pull like icons and add event handlers for icons and counts
@@ -199,7 +193,6 @@ function addLikeFunction(){
     const likeCounts = playlists.map((currentValue) => { return currentValue.querySelector('.like-number') })
 
     likeIcons.forEach ( likeIcon => {
-
         likeIcon.addEventListener("click", (event) => {
 
             const clickedIndex = likeIcons.indexOf(likeIcon);
@@ -232,7 +225,6 @@ addLikeFunction();
 
 //------------------------------------------------------------------------------------------------//
 
-
 //**------------------------------------SHUFFLE SONGS FEATURE------------------------------------**/
 
 //Randomly shuffle array function for the shuffle feature
@@ -247,7 +239,6 @@ function shuffleArray(arr){
 }
 
 //------------------------------------------------------------------------------------------------//
-
 
 //**------------------------------------DELETE FUNCTIONALITY------------------------------------**//
 
@@ -269,7 +260,6 @@ function addDeleteFunction() {
     })
 
 }
-
 addDeleteFunction();
 
 //------------------------------------------------------------------------------------------------//
@@ -295,9 +285,7 @@ function createAddPlaylistEvent(){
 
     })
 }
-
 createAddPlaylistEvent();
-
 
 //populate modal with add playlist form
 function openAddModal() {
@@ -366,7 +354,6 @@ function createAddSongListElement() {
         <input type='submit' value="Add Song" class='add-song'>
         </form>
     `
-
     const newSongList = createModalSongList(newSongs);
     div.appendChild(newSongList);
     return div;
@@ -422,7 +409,6 @@ function addPlaylistToList(event) {
 
 //------------------------------------------------------------------------------------------------//
 
-
 //**------------------------------------SORT FUNCTIONALITY--------------------------------------**//
 
 //Pull sort button elements
@@ -447,12 +433,11 @@ likeSortElement.addEventListener('click', () => {
 
 dateSortElement.addEventListener('click', () => {
 
-    playlistData.sort((a,b) => a.playlistID - b.playlistID)
+    playlistData.sort((a,b) => b.playlistID - a.playlistID)
     refreshPlaylists();
 
 })
 //-------------------------------------------------------------------//
-
 
 //------------------------------------------------------------------------------------------------//
 
@@ -465,14 +450,11 @@ function addEditEventListners() {
 
     editIcons.forEach(icon => {
         icon.addEventListener('click', () => {
-
             const clickedIndex = editIcons.indexOf(icon)
             openEdit(playlists[clickedIndex]);
-
         })
     })
 }
-
 addEditEventListners();
 
 //Add an edit modal to change the current playlist name, author, or songs
@@ -496,10 +478,9 @@ function openEdit(playlist) {
     editAuthorEvent(playlist);
 }
 
+//Move cursor to next input box after user 'enters'
 function editTitleEvent(playlist) {
-
     const input = playlist.querySelector('.edit-title');
-
     input.addEventListener('keyup', (event) => {
         if(event.key === "Enter"){
             const inputAuth = playlist.querySelector('.edit-author')
@@ -508,10 +489,9 @@ function editTitleEvent(playlist) {
     })
 }
 
+//Upon pressing enter on the author input set new playlist title and author
 function editAuthorEvent(playlist) {
-
     const input = playlist.querySelector('.edit-author');
-
     input.addEventListener('keyup', (event) =>{
         if(event.key === "Enter"){
             //Store new data
@@ -536,10 +516,12 @@ function editAuthorEvent(playlist) {
 
 //**------------------------------------SEARCH FUNCTIONALITY-------------------------------------**//
 
+//Grab Search Elements
 const searchBar = document.getElementById('search-input');
 const clearSearch = document.querySelector('.search-clear');
 const submitSearch = document.querySelector('.search-submit');
 
+//-----------Create event listeners for each element------------//
 submitSearch.addEventListener('click', () => {
     renderedPlaylists = filterPlaylistsFromSubstring(searchBar.value)
     refreshPlaylists();
@@ -559,12 +541,12 @@ searchBar.addEventListener("keypress", (event) => {
     }
 })
 
+//--------------------------------------------------------------//
+
+//Filter the playlists based on a substring and return the resulting array
 function filterPlaylistsFromSubstring(substring) {
     const playlists = playlistData.filter(item => item.playlist_name.includes(substring) || item.playlist_author.includes(substring));
     return playlists
-
 }
-
-
 
 //------------------------------------------------------------------------------------------------//

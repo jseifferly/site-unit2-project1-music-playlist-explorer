@@ -63,7 +63,7 @@ p {
 
 #featured-content {
     display: flex;
-    margin: 10% auto;
+    margin: 5% auto;
     padding: 20% auto;
 }
 
@@ -74,7 +74,7 @@ p {
 }
 
 .featured-song-list {    
-    height: 80%;
+    height: 60%;
     width: 40%;
 }
 
@@ -312,6 +312,7 @@ p {
 
 .modal-header{
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 20px;
     height: 50%;
 }
@@ -329,6 +330,8 @@ p {
 }
 
 .add-modal-header {
+    display: flex;
+    
     text-align: center;
     font-size: 200%;
     text-decoration: underline;

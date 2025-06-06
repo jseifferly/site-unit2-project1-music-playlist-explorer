@@ -4,7 +4,7 @@ Submitted by: **Jackson Seifferly**
 
 Estimated time spent: **18** hours spent in total
 
-Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD_LINK_HERE)
+Deployed Application (**required**): [https://site-unit2-project1-music-playlist-u5sr.onrender.com]
 
 ### Application Features
 
@@ -101,8 +101,8 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD
   - [x] Add a delete button to each playlist tile within the grid view.
   - [x] When clicked, the playlist is removed from the playlist grid view.
 
-- [ ] **Search Functionality**
-  - [ ] Implement a search bar that allows users to filter playlists by:
+- [x] **Search Functionality**
+  - [x] Implement a search bar that allows users to filter playlists by:
     - [x] Name 
     - [x] Author
   - [ ] The search bar should include:
@@ -118,7 +118,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD
     - [ ] **Optional:** If the Add Playlist, Edit Existing Playlist, or Delete Playlist stretch features were implemented:
       - [x] If users can add a playlist, added playlists should be included in search results.
       - [x] If users can edit a playlist, search results should reflect the latest edits to each playlist.
-      - [ ] If users can delete a playlist, deleted playlists should no longer be included in search results.
+      - [x] If users can delete a playlist, deleted playlists should no longer be included in search results.
       - **Note:** You will not be graded on the implementation of this optional subfeature to keep your grade of this stretch feature independent of your implementation of other stretch features. However, we highly suggest including this in your implementation to model realistic behavior of real applications. 
 
 - [x] **Sorting Options**
@@ -138,15 +138,15 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes, very new to web development and all of the topics we covered were very helpful in getting me ready to tackle this project. I felt very well prepared for everything, the functional features like searching and sorting did catch me off guard, but after a little bit of brainstorming they actually became very simple and approchable.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time I really wish I could refactor most of my code to make my storage of information much more efficent. I often found myself looking back at many different varible names and wishing for a better structured foundation for my codebase. I really wish I could have added a song search feature to search for songs within your playlists.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+Everything went pretty well didn't find any bugs during the demo, although I'm sure there are some there. Some of the other people added the function to add and remove songs from pre-existing playlists and that was something I really didn't have time to get too although it looked really cool.
 
 ### Open-source libraries used
 
@@ -155,3 +155,5 @@ Add your response here
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+Shout out to my whole table of Kevin, Thomas, and Ben was able to bounce a lot of ideas of these guys and we all helped support each other and help each other reach all the goals for our projects
