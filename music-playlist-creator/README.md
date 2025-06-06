@@ -105,14 +105,14 @@ Deployed Application (**required**): [https://site-unit2-project1-music-playlist
   - [x] Implement a search bar that allows users to filter playlists by:
     - [x] Name 
     - [x] Author
-  - [ ] The search bar should include:
+  - [x] The search bar should include:
     - [x] Text input field
     - [x] Submit/Search Button
     - [x] Clear Button
   - [ ] Playlists matching the search query in the text input are displayed in a grid view when the user:
     - [x] Presses the Enter Key
     - [x] Clicks the Submit/Search Button 
-  - [ ] User can click the clear button. When clicked:
+  - [x] User can click the clear button. When clicked:
     - [x] All text in the text input field is deleted
     - [x] All playlists in the `data.json` file are displayed in a grid view
     - [ ] **Optional:** If the Add Playlist, Edit Existing Playlist, or Delete Playlist stretch features were implemented:

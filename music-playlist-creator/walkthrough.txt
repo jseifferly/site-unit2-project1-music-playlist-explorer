@@ -1,0 +1,20 @@
+-show playlist details works 
+
+-shuffle multiple times
+
+-refresh featured page more than once
+
+-Add a playlist
+
+-Add 2 songs to new playlist
+
+-Like a playlist with 0 likes and with more than zero
+
+-Delete a playlist
+
+-Edit name and author
+
+-sort playlists by each catagory
+
+-use search feature
+

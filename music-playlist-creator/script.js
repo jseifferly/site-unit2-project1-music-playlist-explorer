@@ -251,7 +251,6 @@ function addDeleteFunction() {
     deleteIcons.forEach ( icon => {
         icon.addEventListener('click', () => {
             const clickedIndex = deleteIcons.indexOf(icon);
-            console.log(clickedIndex);
             playlists[clickedIndex].remove();
             renderedPlaylists.splice(clickedIndex,1);
             playlistData.splice(clickedIndex,1);
