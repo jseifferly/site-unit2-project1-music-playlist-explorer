@@ -324,3 +324,54 @@ p {
 #modal-title {
     font-size: 200%;
 }
+
+.add-modal-header {
+    text-align: center;
+    font-size: 200%;
+    text-decoration: underline;
+}
+
+#image-file {
+    font-size: 100%;
+    margin-bottom: 3%;
+}
+
+#name-in {
+    font-size: 100%;
+    margin-bottom: 3%;
+}
+
+#author-in {
+    font-size: 100%;
+    margin-bottom: 3%;
+}
+
+.create-playlist {
+    font-size: 100%;
+    background-color: rgb(83, 83, 248);
+    border-radius: 10px;
+    color: white;
+    margin: 0 35%;
+    margin-bottom: 5%;
+ }
+
+ .create-playlist:hover {
+    background-color: rgb(143, 143, 248);
+    cursor: pointer;
+ }
+
+ .add-song-form {
+    text-align: center;
+ }
+
+ .add-song {
+    font-size: 100%;
+    background-color: rgb(83, 83, 248);
+    border-radius: 10px;
+    color: white;
+ }
+
+  .add-song:hover {
+    background-color: rgb(143, 143, 248);
+    cursor: pointer;
+ }

@@ -13,15 +13,15 @@ function loadPlaylistData(){
         playlistGrid.appendChild(element);
     }
 
-    playlistData.forEach(playlist => {
-        const element = createPlaylistElement(playlist);
-        playlistGrid.appendChild(element);
-    })
-
     const addPlaylistElement = document.createElement('div');
     addPlaylistElement.className = 'add-playlist'
     addPlaylistElement.textContent = '+'
     playlistGrid.appendChild(addPlaylistElement);
+
+    playlistData.forEach(playlist => {
+        const element = createPlaylistElement(playlist);
+        playlistGrid.appendChild(element);
+    })
 
 
 }
@@ -328,7 +328,7 @@ function createNewPlaylistInfoElement() {
         <input type='text' id='name-in' name='name-in'><br>
         <label for='author-in'>Author Name:</label><br>
         <input type='text' id='author-in' name='author-in'><br>
-        <input type='submit' value='Create New Playlist'>
+        <input type='submit' value='Create New Playlist' class='create-playlist'>
     `
     return div;
 }
@@ -342,7 +342,7 @@ function createAddSongListElement() {
         <input type='text' id='add-song-name' name='add-song-name'>
         <label for='add-song-artist'>Artist: </label>
         <input type='text' id='add-song-artist' name='add-song-artist'>
-        <input type='submit' value="Add Song">
+        <input type='submit' value="Add Song" class='add-song'>
         </form>
     `
 

@@ -73,17 +73,17 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD
 
 #### STRETCH FEATURES
 
-- [ ] **Add New Playlists**
-  - [ ] Allow users to create new playlists.
-  - [ ] Using a form, users can input playlist:
-    - [ ] Name
-    - [ ] Author
-    - [ ] Cover image
-    - [ ] Add one or more songs to the playlist, specifying the song's:
-      - [ ] Title
-      - [ ] Artist
-  - [ ] The resulting playlist should display in the grid view.
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist. 
+- [x] **Add New Playlists**
+  - [x] Allow users to create new playlists.
+  - [x] Using a form, users can input playlist:
+    - [x] Name
+    - [x] Author
+    - [x] Cover image
+    - [x] Add one or more songs to the playlist, specifying the song's:
+      - [x] Title
+      - [x] Artist
+  - [x] The resulting playlist should display in the grid view.
+  - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist. 
 
 - [ ] **Edit Existing Playlists**
   - [ ] Enable users to modify the details of existing playlists.
