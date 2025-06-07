@@ -130,8 +130,6 @@ Deployed Application (**required**): [https://site-unit2-project1-music-playlist
 
 ### Walkthrough Video
 
-tention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
-
 (https://www.loom.com/share/e38e0816b2b74f30aa9affd24de76dc9?sid=38c8f8f9-d52d-402c-9fcc-1c66cbeee35f)
 
 ### Reflection
